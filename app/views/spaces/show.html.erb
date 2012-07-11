@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Category:</b>
+  <%= @space.category.name %>
+</p>
+<p>
+  <b>Centro Comercial:</b>
+  <%= @space.mall.name %>
+</p>
+
+<p>
+  <b>Width:</b>
+  <%= @space.width %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%= @space.height %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @space.location %>
+</p>
+
+
+<%= link_to 'Edit', edit_space_path(@space) %> |
+<%= link_to 'Back', spaces_path %>

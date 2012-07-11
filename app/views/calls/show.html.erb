@@ -7,9 +7,13 @@
 
 <p>
   <b>Client:</b>
-  <%= @call.client_id %>
+  <%= @call.client.name %>
 </p>
 
+<p>
+  <b>Nota:</b>
+  <%= @call.note %>
+</p>
 
 <%= link_to 'Edit', edit_call_path(@call) %> |
 <%= link_to 'Back', calls_path %>

@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Parkingvalla</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+	<title>ParkingValla</title>
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+	<%= yield :head %>
 </head>
 <body>
-
-<%= yield %>
-
+	<div class="container">
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<ul class="nav">
+						<li>
+							<%= link_to 'Clientes', clients_path() %> 
+						</li>
+						<li>
+							<%= link_to 'LLamadas', calls_path() %> 
+						</li>
+						<li>
+							<%= link_to 'CComerciales', malls_path() %> 
+						</li>
+						<li>
+							<%= link_to 'Espacios', spaces_path() %> 
+						</li>
+						<li>
+							<%= link_to 'Categorias', categories_path() %> 
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<%= yield %>
+	</div>
 </body>
 </html>

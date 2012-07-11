@@ -1,0 +1,54 @@
+<% content_for :head do %>
+<%javascript_include_tag "dataTables.bootstrapPagination"%>
+
+  <script type="text/javascript" charset="utf-8">
+ jQuery(document).ready(function(){
+    
+	jQuery('#spaces').dataTable({
+    "sPaginationType": "bootstrap"
+    });
+
+
+
+    jQuery.extend( jQuery.fn.dataTableExt.oStdClasses, {
+    "sWrapper": "dataTables_wrapper form-inline"
+    } );
+    });
+
+</script>
+
+<% end %>
+<h1>Espacios</h1>
+
+<table class="table table-striped" id="spaces">
+	<thead>
+  <tr>
+    <th>Category</th>
+	<th>CComercial</th>
+    <th>Width</th>
+    <th>Height</th>
+    <th>Location</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% @spaces.each do |space| %>
+  <tr>
+    <td><%= space.category.name %></td>
+	<td><%= space.mall.name %></td>
+    <td><%= space.width %></td>
+    <td><%= space.height %></td>
+    <td><%= space.location %></td>
+    <td><%= link_to 'Show', space %></td>
+    <td><%= link_to 'Edit', edit_space_path(space) %></td>
+    <td><%= link_to 'Destroy', space, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Space', new_space_path %>

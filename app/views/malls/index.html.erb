@@ -1,0 +1,23 @@
+<h1>Listing malls</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @malls.each do |mall| %>
+  <tr>
+    <td><%= mall.name %></td>
+    <td><%= link_to 'Show', mall %></td>
+    <td><%= link_to 'Edit', edit_mall_path(mall) %></td>
+    <td><%= link_to 'Destroy', mall, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mall', new_mall_path %>

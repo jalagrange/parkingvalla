@@ -1,4 +1,12 @@
 Parkingvalla::Application.routes.draw do
+  resources :administrators
+
+  resources :malls
+
+  resources :spaces
+
+  resources :categories
+
   resources :calls
 
   resources :clients
