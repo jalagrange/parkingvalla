@@ -8,7 +8,6 @@ config/database.yml
 Thumbs.db
 .DS_Store?
 ERD.pdf
-Gemfile
 .rvmc
 *.swp
 out.txt
